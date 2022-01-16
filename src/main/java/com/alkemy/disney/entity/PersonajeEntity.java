@@ -3,10 +3,7 @@ package com.alkemy.disney.entity;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,9 +13,19 @@ import java.util.List;
 @Setter
 public class PersonajeEntity {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private Long id;
 
+    private String imagen;
 
+    private String nombre;
 
+    private Integer edad;
+
+    private Float peso;
+
+    private String historia;
 
 
     @ManyToMany(mappedBy = "personajes",cascade = CascadeType.ALL)
