@@ -45,7 +45,7 @@ public class PeliculaEntity {
             })
     @JoinTable(
             name = "personaje_pelicula",
-            joinColumns = @JoinColumn(name = "pelicula_id"),/*donde estoy parada, en este caso pais*/
+            joinColumns = @JoinColumn(name = "pelicula_id"),/*donde estoy parada, en este caso pelicula*/
             inverseJoinColumns = @JoinColumn(name = "personaje_id"))/*la relacion con la otra columna en otro lado, en este caso icon*/
     private Set<PersonajeEntity> personajes= new HashSet<>();
 
